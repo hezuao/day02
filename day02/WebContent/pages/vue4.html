@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="../js/vuejs-2.5.16.js"></script>
+<script type="text/javascript" src="../js/myCompotent.js"></script>
+<body>
+<!-- 组件之间通讯 (父与子传递  复杂数据类型 ) -->
+<div id="app">
+   <www :vname="name" :vage="age" :vusers="userList"></www>
+</div>
+
+<script type="text/javascript">
+  
+  var app =new Vue({
+	   el:"#app",
+	   data:{
+		   num :10,
+		   name:"小明",
+		   age :18,
+		   userList:[
+		             {name:"老王",addr:"河南",sex:"1"}, 
+		             {name:"小明",addr:"河南",sex:"1"}, 
+		             {name:"小虎",addr:"广东",sex:"0"}
+		            ]
+		   
+	   }
+  });
+</script>
+</body>
+</html>

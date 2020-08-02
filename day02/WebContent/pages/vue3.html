@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="../js/vuejs-2.5.16.js"></script>
+<body>
+<!-- 定义组件 (全局组件、局部组件) -->
+<div id="app">
+   <aaa></aaa>
+   <aaa></aaa>
+   <aaa></aaa><br>
+   
+   <jvbu11></jvbu11>
+   
+</div>
+
+<script type="text/javascript">
+  Vue.component("aaa",{
+	  template : '<button @click="num ++">点击了{{num}}次</button>',
+	  data(){
+		  return{
+			  num : 0
+		  }
+	  }
+	  
+  });
+  
+  var jvbu ={
+		  template : '<button @click="num ++">局部组件：点击了{{num}}次</button>',
+		  data(){
+			  return{
+				  num : 0
+			  }
+		  }  
+  }
+  var app =new Vue({
+	   el:"#app",
+	   components :{
+		   jvbu11 : jvbu
+	   },
+	   data:{
+		   num :10
+		   
+	   }
+  });
+</script>
+</body>
+</html>

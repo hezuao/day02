@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="../js/vuejs-2.5.16.js"></script>
+<body>
+<!-- 计算属性 -->
+<div id="app">
+   请输入:<input type="text" v-model="num">{{num}}<br>
+       	输出5的倍数：{{add}} <br>
+       	输出5的倍数后减1：{{add1}}<br>
+   		输出5的倍数后加5：{{add2}}<br>
+</div>
+
+<script type="text/javascript">
+  var app =new Vue({
+	   el:"#app",
+	   data:{
+		   num :20
+	   },
+	   computed:{
+		  add(){
+			  return this.num *5;
+		  },
+		  add1(){
+			  return this.num *5 -1;
+		  },
+		  add2(){
+			  return this.num *5 +1;
+		  }
+	   }
+  });
+</script>
+</body>
+</html>

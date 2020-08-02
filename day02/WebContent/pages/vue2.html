@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="../js/vuejs-2.5.16.js"></script>
+<body>
+<!-- watch监控 -->
+<div id="app">
+   <input type="text" v-model="num">{{num}}<br>
+   
+</div>
+
+<script type="text/javascript">
+  var app =new Vue({
+	   el:"#app",
+	   data:{
+		   num :10,
+		   person:{
+			   name :"小明",
+			   age :18
+		   }
+	   },
+	   watch:{
+		   num(newVal,oldVal){
+			  console.info(newVal+"==="+oldVal);
+		   },
+		   person:{
+			   deep:true,
+			   handler(val){
+				   console.log(val.name+"==="+val.age)
+				   if(val.age>=18){
+					   //.......
+				   }
+			   }
+		   }
+	   }
+  });
+</script>
+</body>
+</html>
